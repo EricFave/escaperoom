@@ -1,0 +1,800 @@
+{
+    "start": {
+        "instrucciones": [
+          "No puedes cargar objetos en las manos, debes meterlos en tu bolsillo haciendo un POST a localhost:3000/bolsillo con el body {id:nombre-objeto}",
+          "Eres el responsable de tu bolsillo, si algo sale: DELETE y si algo entra: POST, intenta gestionarlo correctamente.",
+          "Este juego va de combinar objetos con lugares, personas u otros objetos, combina solo los objetos que tienes en el /bolsillo.",
+          "Si quieres pistas de algo en concreto, usa localhost:3000/pista/:algo",
+          "Si necesitas aún más pistas, usa localhost:3000/pista-extra/:algo"
+        ],
+        "triunfos": ["😌",
+        "En este Escape Room tendrás la posibilidad de ganar 'triunfos'",
+        "Los triunfos, consisten en logros que pueden estar ocultos o no",
+        "¡Consigue todos para completar el Scape Room con todas sus alternativas!"
+        ],
+        "avisos": [
+          "Para poder ver las imágenes debes usar un email de @iticbcn",
+          "IMPORTANTE: No accedas a una ruta de /:vecino sin añadir una sub-ruta detrás. Ej. url/pepito/martillo",
+          "IMPORTANTE: No accedas a una ruta de /:objeto sin añadir una sub-ruta detrás. Ej. url/martillo/clavo"
+        ],
+        "situacion": [
+          [
+            "Llegas a casa exhausto después de una larga jornada en el tajo y solo puedes pensar en meterte por fin en la cama.",
+            "Estás frente a la puerta y al meter la mano en el bolsillo de tu chaqueta no encuentras nada, tus llaves no están.",
+            "Buscas a tu alrededor, no has escuchado que se te cayeran de camino, pero tienes que encontrarlas.",
+            "Vuelves a meter la mano en el bolsillo, es extrañamente profundo, pero estás seguro de que las llaves no están ahí.",
+            "Sospechas que saliste de casa sin ellas, no sería la primera vez...",
+            "Debes encontrar otra manera de entrar."
+          ],
+          [
+            "Piensas que uno de tus vecinos podría ayudarte, pero a estas horas de la noche podrías molestar a alguien, debes ser cauto.",
+            "La /nota-mental que hiciste de tus vecinos al mudarte será de GRAN AYUDA."
+          ]
+        ]
+    },
+    "bolsillo": [],
+    "nota-mental": [
+        {
+          "id":"observaciones",
+          "observaciones": [
+          "Esta nota mental contiene información sobre los vecinos de las casas adyacentes y de enfrente.",
+          "La reciente oleada de crimen ha obligado a que cada vecino tenga un codigo secreto para picar a su puerta.",
+          "Cuando quieras hablar con alguno, introduce su nombre y código: url/:NOMBRE/:CÓDIGO-SECRETO."
+          ],
+          "aviso":"No debo visitar a ningún vecino sin su código secreto."
+        },
+        [
+          "He de mirar mi /reloj y actuar acorde a la hora, no quiero molestar a nadie..."
+        ],
+        {
+          "id": "laura",
+          "numero": 106,
+          "disponibilidad": "De 7:30PM a 8:30PM",
+          "codigo-secreto": "https://drive.google.com/file/d/1noiBlpEnYJBvDQJ1oWW5cufv1FSf6QwY/view?usp=sharing"
+        },
+        {
+          "id": "john",
+          "numero": 108,
+          "disponibilidad": "De 6:45PM a 8:00PM",
+          "codigo-secreto": "https://drive.google.com/file/d/1rNNzgFty5WnYh423pNL6nJtfMOWwjtS6/view?usp=sharing"
+        },
+        {
+          "id": "jeremy",
+          "numero": 105,
+          "disponibilidad": " De 7:00PM a 9:15PM",
+          "codigo-secreto": "https://drive.google.com/file/d/1MQwqs8zuuccoZYhuZU0XmZSrzjsu6XhM/view?usp=sharing"
+        },
+        {
+          "id": "mathew",
+          "numero": 109,
+          "disponibilidad": "De 10:53PM a 12:00AM",
+          "codigo-secreto": "https://drive.google.com/file/d/1djCQhjSUkwaTFF2B4ThgTs99RgN_xMbF/view?usp=sharing"
+        }
+    ],
+    "reloj": {
+        "id":"mirar-la-hora",
+        "vision": "https://drive.google.com/file/d/1muQ62eyo0IDpqgDof_KsB91Jy2tXX48k/view?usp=sharing",
+        "observaciones": [
+          "localhost:3000/¿¿Qué hora es??",
+          "Ya sabes a que puerta picar.",
+          "Vuelve a tu /nota-mental si hace falta."
+        ]
+    },
+    "8:43pm": {
+        "id":"hora",
+          "observaciones": [
+            "Consigues descifrar el maldito reloj, ahora asegúrate de no despertar a ningún vecino...",
+            "Ahora que ya sabes la hora, puedes PARCHEAR el reloj para arreglarlo.",
+            "localhost:3000/reloj con {vision:https://drive.google.com/file/d/13JyB-oiyNqLWeT8VMrlhsOAG44r0I6HQ/view?usp=sharing}"
+          ],
+          "triunfo": "Ubicado en el tiempo. Te sientes ligeramente orgulloso. 😌"
+    },
+    "20:43": {
+        "id":"hora",
+        "observaciones": [
+            "Consigues descifrar el maldito reloj, ahora asegúrate de no despertar a ningún vecino...",
+            "Ahora que ya sabes la hora, puedes PARCHEAR el reloj para arreglarlo.",
+            "localhost:3000/reloj con {vision:https://drive.google.com/file/d/13JyB-oiyNqLWeT8VMrlhsOAG44r0I6HQ/view?usp=sharing}"
+          ],
+        "triunfo": "Ubicado en el tiempo. Te sientes ligeramente orgulloso. 😌"
+    },
+    "jeremy": [
+            {
+              "id": "toc-toc-toctoc-toc-toc",
+              "conversacion": [
+                  "¿Todo bien?",
+                  "Ya veo... que despistado eres, toma estos ALICATES, quizá te sean de ayuda.",
+                  "El primer objeto es gratis, necesitaré un incentivo para seguir ayudándote...",
+                  "Buena suerte, ya me devolverás los alicates mañana."
+              ],
+              "obervaciones": [
+                  "Debería GUARDAR lo que me ha dado en el /bolsillo de la chaqueta..."
+              ],
+              "objeto-obtenido": "alicates",
+              "aviso": "NO entres a las rutas de objetos sin una sub-ruta",
+              "triunfo": "¡¡Que buen ritmo!! 😌"
+            },
+            {
+              "id": "clip",
+              "conversacion": "Cuando no sé avanzar en la vida le pido una /pista a Clippy 📎"
+            },
+            {
+              "id": "alicates",
+              "conversacion": "¿Ya no los necesitas?"
+            },
+            {
+              "id": "hotdog",
+              "conversacion": "¿Tengo cara de perro?"
+            },
+            {
+              "id": "manivela",
+              "observaciones": [
+                  "Ve tus intenciones y te da un tortazo.",
+                  "Parece que no encaja ahí..."
+              ]
+            },
+            {
+              "id":"moneda",
+              "conversacion": "Me parece buen trueque, toma esto.",
+              "objeto-obtenido":"hotdog"
+            },
+            {
+              "id": "llave-clip",
+              "conversacion": "Eres todo un maestro moldeando clips. Entra ya en tu casa y déjame en paz.",
+              "triunfo": "Orgulloso de tu creación. 😌"
+            }
+    ],
+    "mathew": [
+        {
+          "id":"toc-toctoc-toc-toctoc",
+          "conversacion": "¿¡No sabes qué hora es!?",
+          "accion":"Te vuela una oreja de un tiro. 💀",
+          "triunfo": "Van Gogh. 😌"
+        }
+    ],
+    "laura": [
+        {
+          "id":"toctoctoc-toc",
+          "conversacion": "Te insulta 💀"
+        }
+    ],
+    "john": [
+        {
+          "id":"toctoc-toctoc-toc",
+          "conversacion": "Nadie responde."
+        }
+    ],
+    "maps": {
+        "id":"maps",
+        "observaciones":"Abres la app y muestra tu calle.",
+        "vision":"https://drive.google.com/file/d/1zghVpwPGkW_lzg13F7Zu8qzP28S5na4X/view?usp=sharing"
+    },
+    "105": {
+        "id":"105",
+        "obervaciones": [
+          "Aquí vive Jeremy, si quiero hablar con él deberia picar su código en la puerta o tendré problemas (localhost:3000/jeremy/:codigo-secreto)",
+          "Me advirtió de que NUNCA fuese a su casa sin un motivo así que NO he de ir a localhost:3000/jeremy."
+        ],
+        "aviso": "No es psicología inversa, no vayas o te cargas el juego."
+    },
+    "106": {
+        "id":"106",
+        "obervaciones": [
+          "Aquí vive Laura, si quiero hablar con ella deberia picar su código en la puerta o tendré problemas (localhost:3000/laura/:codigo-secreto)",
+          "Me advirtió de que NUNCA fuese a su casa sin un motivo así que NO he de ir a localhost:3000/laura."
+        ],
+        "aviso": "No es psicología inversa, no vayas o te cargas el juego."
+    },
+    "107": {
+      "id":"107",
+      "obervaciones": [
+          "Esta es mi casa, me he vuelto a dejar las llaves.",
+          "Ya van TRES veces este año... Voy a tener que ir al neurólogo.",
+          "He de buscar una forma de entrar, inspeccionaré el jardin y pediré ayuda a algún vecino."
+      ],
+      "triunfo": "Al menos sabes dónde vives. 😌"
+    },
+    "108": {
+        "id":"108",
+        "obervaciones": [
+          "Aquí vive John, si quiero hablar con él deberia picar su código en la puerta o tendré problemas (localhost:3000/john/:codigo-secreto)",
+          "Me advirtió de que NUNCA fuese a su casa sin un motivo así que NO he de ir a localhost:3000/john."
+        ],
+        "aviso": "No es psicología inversa, no vayas o te cargas el juego."
+    },
+    "109": {
+        "id":"109",
+        "obervaciones": [
+          "Aquí vive Mathew, si quiero hablar con él deberia picar su código en la puerta o tendré problemas (localhost:3000/mathew/:codigo-secreto)",
+          "Me advirtió de que NUNCA fuese a su casa sin un motivo así que NO he de ir a localhost:3000/mathew."
+        ],
+        "aviso": "No es psicología inversa, no vayas o te cargas el juego."
+    },
+    "jardin": {
+        "id":"jardin",
+        "vision":"https://drive.google.com/file/d/14wNbfvMr_IrKHmhmd5qn2q7QTfbViW2o/view?usp=sharing"
+    },
+    "hoyo": {
+        "id": "hoyo",
+        "observaciones": [
+          "Te asomas al hoyo de tu jardín, la tierra cede y caes en él.",
+          "El hoyo es más profundo de lo que parece, te has dado un buen porrazo.",
+          "Estás aturdido y varias letras aparecen en los huecos que te rodean, quizá puedas /trepar por esa palabra..."
+        ]
+    },
+    "trepar": [
+      [
+        "Elige qué apoyos usarás para subir, debes añadirlos con PATCH en localhost:3000/trepar/:numero-id",
+        "Puedes ver las IDs abajo.",
+        "Cuando la tengas trepa por ella en localhost:3000/:PALABRA"
+      ],
+      {
+        "id":"vision",
+        "vision":"https://drive.google.com/file/d/1WMbdNge68WPy2-JmGtgMEpFIiETZ8rJ_/view?usp=sharing"
+      },
+      {
+        "id":"1",
+        "letra":""
+      },
+      {
+        "id":"2",
+        "letra":""
+      },  
+      {
+        "id":"3",
+        "letra":""
+      },  
+      {
+        "id":"4",
+        "letra":""
+      },
+      {
+        "id":"5",
+        "letra":""
+      },  
+      {
+        "id":"6",
+        "letra":""
+      },  
+      {
+        "id":"7",
+        "letra":""
+      },
+      {
+        "id":"8",
+        "letra":""
+      }
+    ],
+    "conejera":{
+        "id":"conejera",
+        "accion":"Consigues salir del hoyo y decides que mañana comprarás farolillos para alumbrar el jardín.",
+        "observaciones":"En uno de los huecos donde metiste la mano para trepar encontraste una moneda de oro, ¿será auténtica?",
+        "objeto-obtenido":"moneda"
+    },
+    "piedras": [
+        [
+          "¡¡OMG, quien se ha cargado mi pirámide de piedras!!, ¿¡cómo abriré la reja!?"
+        ],
+        {
+          "id":"piedras",
+          "vision": "https://drive.google.com/file/d/1BqM9eMHHVVtQbeHGELbokH3irOgjIKl1/view?usp=sharing"
+        }
+    ],
+    "58734": [
+        {
+          "id": "reja",
+          "accion": "pones el codigo y la reja se desbloquea, ahora solo falta la /puerta"
+        }
+    ],
+    "caseta": [
+        {
+          "id":"caseta",
+          "observaciones": "Rufus está jugando con algo en su caseta, no llegas a apreciar que es, pero sabes que no lo podrás coger  mientras siga interesado.",
+          "conversacion": [
+            "Ay Rufus... Otra vez no puedo entrar en casa, no puedo darte tus palitos de buey.",
+            "¡Woof!"
+          ]
+        }
+    ],
+    "rufus": [
+        {
+          "id": "hotdog",
+          "observaciones": [
+            "Rufus corre hacia ti y se lo cena con ímpetu.",
+            "Sigues sin poder entrar a casa pero te sientes ligeramente mejor.",
+            "Parece entretenido con la comida, quizá puedas coger el juguete."
+          ],
+          "triunfo": "Rufus está contento. 😌"
+        },
+        {
+          "id": "alicates",
+          "accion": "Los lanzas y Rufus los atrapa en el aire.",
+          "observaciones": [
+            "Después de jugar un rato los recuperas."
+          ]
+        },
+        {
+          "id": "manivela",
+          "accion": "Insertas la manivela en la ranura trasera del perro y le das vueltas.",
+          "observaciones": [
+            "El hotdog sale por la boca de Rufus como un churro de plastelina.",
+            "Rufus cena otra vez."
+          ],
+          "triunfo": "Papilla de hotdog. 😌"
+        },
+        {
+          "id": "reloj",
+          "algo": "¡Woooooooof! ¡Woooof-wooof! ¡Wopm!",
+          "observaciones":"Curiosos ladridos..."
+        }
+    ],
+    "juguete": {
+        "id":"juguete",
+        "observaciones": "Recoges una manivela, ¿de dónde diablos ha sacado esto?",
+        "objeto-obtenido": "manivela"
+    },
+    "pozo": [
+        {
+          "id":"pozo",
+          "obervaciones": [
+            "El cubo está al fondo, no parece haber forma de subirlo."
+          ]
+        }
+    ],
+    "manivela": [
+        {
+          "id": "pozo",
+          "accion": [
+            "Insertas la manivela en una ranura del pozo y le das vueltas.",
+            "El cubo sube con algo dentro."
+          ],
+          "observaciones": [
+            "Es un simple clip... alguna utilidad le encontrarás."
+          ],
+          "objeto-obtenido": "clip"
+        },
+        {
+          "id": "rufus",
+          "accion": "Insertas la manivela en la ranura trasera del perro y le das vueltas.",
+          "observaciones": [
+            "El hotdog sale por la boca de Rufus como un churro de plastilina.",
+            "Rufus cena otra vez."
+          ],
+          "triunfo": "Has creado papilla de hotdog. 😌"
+        },
+        {
+          "id": "alicates",
+          "accion": "Los chocas y hacen ¡clang!",
+          "observaciones": [
+            "Parece que no se pueden encajar."
+          ]
+        },
+        {
+          "id": "jeremy",
+          "observaciones": [
+            "Ve tus intenciones y te da un tortazo.",
+            "Parece que no encaja ahí."
+          ]
+        },
+        {
+          "id": "puerta",
+          "observaciones": [
+            "Si tan solo tu puerta fuera una persiana..."
+          ]
+        }
+    ],
+    "llave": [
+        [
+          "Ya van TRES veces...",
+          "Estoy empezando a odiar ese número."
+        ],
+        {
+          "id":"recuerdo",
+          "recuerdo": [
+            [
+              "Piensas en tu llave pero algo no cuadra, parece demasiado larga...",
+              "Empiezas a darle forma al clip con los alicates."
+            ],
+            [
+              "      ######################### ",
+              "    ############################# ",
+              "   ############################### ",
+              "  ##########             ######### ",
+              "  #########               ######## ",
+              "  ##########             ######### ",
+              "  ################################ ",
+              "  ################################ ",
+              "  ################################ ",
+              "   ############################## ",
+              "    ############################ ",
+              "        ()()()()()()()()()() ",
+              "          |||||||||||||||| ",
+              "          ################ ",
+              "          |||||||DELETE||| ",
+              "          |||||||DELETE||| ",
+              "           `|||||DELETE||| ",
+              "             `|||||62(/||| ",
+              "               `|||||(/||| ",
+              "              ´||||47(/||| ",
+              "                `.|||(/||| ",
+              "                  )34(/||| ",
+              "                ,_'||(/||| ",
+              "               ´|||55(/||| ",
+              "             ´|||||||(/||| ",
+              "                `||18(/||| ",
+              "                ´||||(/||| ",
+              "                |||33(/||| ",
+              "               ´|||||(/||| ",
+              "             _.'|||44(/||| ",
+              "            '.|||||||(/||| ",
+              "              `,|||13(/||| ",
+              "               ||||||(/||/ ",
+              "                `*-___-*´  "
+            ]
+          ]
+        },
+        {
+          "id": "62"
+        },
+        {
+          "id": "47"
+        },
+        {
+          "id": "34"
+        },
+        {
+          "id": "55"
+        },
+        {
+          "id": "18"
+        },
+        {
+          "id": "33"
+        },
+        {
+          "id": "44"
+        },
+        {
+          "id": "13"
+        }
+    ],
+    "6247551844": [[
+        "Tu llave-clip tiene la forma correcta"],
+        {
+          "id":"llave-clip",
+          "observaciones": "Con mucho esfuerzo moldeas el clip con la forma de tu llave, ya solo queda probarla con la puerta.",
+          "objeto-obtenido": "llave-clip",
+          "llave-clip": [
+              "                | ",
+              "                | ",
+              "                | ",
+              " /¨¨¨¨¨¨,       | ",
+              " |      |       | ",
+              " |      |       | ",
+              " |              | ",
+              " |              | ",
+              "  `-_           | ",
+              "     `,         | ",
+              "      ,`        | ",
+              "     `_         | ",
+              "        `,      | ",
+              "       __/      | ",
+              "      /         | ",
+              "     (          | ",
+              "      `.        | ",
+              "        |       | ",
+              "       ,`       | ",
+              "    _`          | ",
+              "   `,           | ",
+              "     `,         / ",
+              "       `*-___-*`  "
+            ]
+        }
+    ],
+    "llave-clip": [
+        {
+          "id": "puerta",
+          "accion": "Abres la puerta, ves tus llaves en el suelo.",
+          "vision":"https://drive.google.com/file/d/1Yxh8jarPyZ616NZkF8gG5V1YUpmgUDK9/view?usp=sharing",
+          "observaciones": [
+            "Menos mal que no tendré que pasar esto de nuevo", 
+            "Parece que la luz del sotano esta encendida... que despistado soy.",
+            "Suspiras y te vas a dormir..." 
+          ],
+          "triunfo": "Puerta abierta🔓",
+          "fin": "FINAL LÓGICO"    
+        }
+    ],
+    "dormir":{
+        "id":"dormir",
+        "accion":"Te acuestas y te duermes al instante.",
+        "triunfo": "Sueñas con Rufus. 😌",
+        "fin":"FINAL ONÍRICO"
+    },
+    "sotano":{
+        "id":"sotano",
+        "observaciones": [
+          "Parece que no quieres irte a dormir",
+          "Te encuentras una caja con un boton rojo dentro",
+          "Deberias pulsarlo?" 
+        ],
+        "eleccion": "De tu elección dependerà el futuro. Si quieres pulsarlo solo tienes que  /pulsarboton y, si decides lo contrario, /nopulsarboton",
+        "triunfo": "Insomnio?. 😌"
+    },
+    "pulsarboton": {
+        "id": "pulsarboton",
+        "observaciones": [
+          "Encuentras a Rufus muerto por el maldito hotdog de jeremy",
+          "Te llega una notificación del banco"
+        ],
+        "estado": "LLoras y lloras... pero de la felicidad!! Te ha tocado la loteria!!",
+        "triunfo": "Que le den a Rufus. 🤑",
+        "fin": "FINAL CAÓTICO"
+    },
+    "nopulsarboton": {
+        "id": "nopulsarboton",
+        "observaciones": [
+          "Eres un cagado",
+          "No pasa nada y terminas el juego",
+          "De verdad, esperabas ser el héroe?"
+        ],
+        "triunfo": "Lamentable. 🤡",
+        "fin": "FINAL TERRIBLE"
+    },
+    "alicates": [
+        {
+          "id": "moneda",
+          "observaciones": "Se dobla fácilmente, la dejas como estaba.",
+          "triunfo": "¿Oro puro? 😌"
+        }, 
+        {
+          "id": "clip",
+          "accion": [
+            "Usando los alicates le das forma al clip.",
+            "Ve a localhost:3000/llave para empezar."
+          ]
+        },
+        {
+          "id": "manivela",
+          "accion": "Los chocas y hacen ¡clang!",
+          "observaciones": [
+            "Parece que no se pueden encajar."
+          ]
+        },
+        {
+          "id": "puerta",
+          "accion": "Intentas arrancar la cerradura.",
+          "observaciones": [
+            "Es demasiado sólida, no consigues nada."
+          ]
+        },
+        {
+          "id": "rufus",
+          "accion": "Los lanzas y Rufus los atrapa en el aire.",
+          "observaciones": [
+            "Después de jugar un rato los recuperas."
+          ]
+        },
+        {
+          "id": "reja",
+          "observaciones": [
+            "Será mejor no manipularla."
+          ]
+        },
+        {
+          "id": "pozo",
+          "accion": "Los introduces en una ranura",
+          "observaciones": [
+            "No ocurre absolutamente nada. Pero aquí había otra cosa antes."
+          ]
+        }
+    ],
+    "moneda": [
+        {
+          "id": "alicates",
+          "observaciones": "Se dobla fácilmente, la dejas como estaba.",
+          "triunfo": "¿Oro puro? 😌"
+        }, 
+        {
+          "id": "pozo",
+          "accion": "Deseas poder entrar en casa y tiras la moneda al pozo.",
+          "obsevaciones": "La moneda rebota y se te mete en el bolsillo.",
+          "triunfo":"¿Deseo concedido? 😌"
+        }
+    ],
+    "hotdog": [
+        {
+          "id": "rufus",
+          "observaciones": [
+            "Rufus corre hacia ti y se lo cena con ímpetu.",
+            "Parece entretenido con la comida, quizá puedas ver qué escondía en su caseta"
+          ],
+          "triunfo": "Rufus está contento. 😌"
+        },
+        {
+          "id": "alicates",
+          "observaciones": "Lo destrozas un poco, mejor no volver a hacerlo..."
+        }
+    ],
+    "clip": [
+        {
+          "id": "alicates",
+          "accion": [
+            "Usando los alicates le das forma al clip.",
+            "Ve a localhost:3000/llave para empezar."
+          ]
+        },
+        {
+          "id": "puerta",
+          "accion": "Intentas forzar la cerradura con el clip.",
+          "observaciones": [
+            "CERRADURA NIVEL MAESTRO",
+            "Puedes tirar un dado de 20 caras UNA VEZ y probar suerte.",
+            "Si tu tirada suma 30 o más, puedes entrar a casa sin seguir jugando.",
+            "(Es altamente recomendable seguir el juego)",
+            "Bonificador total: +2 por cada Triunfo 😌 que tengas."
+          ],
+          "dado":"https://g.co/kgs/AKNnMiS"
+        },
+        {
+          "id": "6247551844",
+          "objeto-obtenido": "llave-clip",
+          "observaciones": "Con mucho esfuerzo moldeas el clip con la forma de tu llave, ya solo queda     probarla con la puerta.",
+          "llave-clip": [
+            "                | ",
+            "                | ",
+            "                | ",
+            " /¨¨¨¨¨¨,       | ",
+            " |      |       | ",
+            " |      |       | ",
+            " |              | ",
+            " |              | ",
+            "  `-_           | ",
+            "     `,         | ",
+            "      ,`        | ",
+            "     `_         | ",
+            "        `,      | ",
+            "       __/      | ",
+            "      /         | ",
+            "     (          | ",
+            "      `.        | ",
+            "        |       | ",
+            "       ,`       | ",
+            "    _`          | ",
+            "   `,           | ",
+            "     `,         / ",
+            "       `*-___-*`  "
+          ]
+        }
+    ],
+    "reja":{
+        "id":"reja",
+        "observaciones": [
+          "Está bloqueada con un código que siempre olvido...",
+          "Suerte que tengo mi pirámide de piedras de jardin para recordármelo."
+        ]
+    },
+    "puerta": {
+        "id":"puerta",
+        "accion": "Empujas. Tiras. Giras el pomo...",
+        "observaciones": "No, no es tan fácil. Tendrás que abrirla de otra forma."
+    },
+    "pista": [
+        {
+          "id":"clippy",
+          "aviso": [
+          "📎 Hola, soy Clippy, tu fuente de pistas de confianza.",
+          "📎 Has accedido a todas las pistas, si quieres una en concreto debes ir a localhost:3000/pista/:algo-en-concreto"
+          ]
+        },
+        {
+          "id": "codigo-secreto",
+          "pista": [
+            "toc-toc",
+            "📎 ¿Quién es?"
+          ]
+        },
+        {
+          "id": "alicates",
+          "pista": [
+            "📎 Sirven para doblar y agarrar."
+          ]
+        },
+        {
+          "id": "clip",
+          "pista": [
+            "📎 Algunos clips somos firmes, parece que a éste lo podrás doblegar a tu voluntad."
+          ]
+        },
+        {
+          "id": "bolsillo",
+          "pista": [
+            "📎 Debes hacer un POST de cada objeto que recibes.",
+            "📎 localhost:3000/bolsillo/:nombre-objeto"
+          ]
+        },
+        {
+          "id": "reloj",
+          "pista": [
+            "📎 Cada número está codificado con un sistema numérico, observa la esquina superior derecha del reloj.",
+            "📎 Hora en formato AM/PM.",
+            [
+              "📎 Si necesitas más pistas, ve a localhost:3000/pista-extra/reloj"
+            ]
+          ]
+        },
+        {
+          "id": "vecino",
+          "pista": [
+            "📎 Si no sabes qué hora es, echale un vistazo a tu reloj en localhost:3000/reloj.",
+            "📎 En la nota mental que hiciste hay datos sobre tus vecinos, piensa en localhost:3000/nota-mental",
+            [
+              "📎 Si necesitas más pistas, ve a localhost:3000/pista-extra/vecino"
+            ]
+          ]
+        },
+        {
+          "id": "hoyo",
+          "pista": "📎 ¡Tienes que /trepar para salir de ahí!"
+        },
+        {
+          "id": "trepar",
+          "pista": "📎 ¡Los círculos cromáticos son muy guays!"
+        },
+        {
+          "id": "piedras",
+          "pista": "📎 ¡Mira el jardín!"
+        },
+        {
+          "id": "caseta",
+          "pista": "📎 Rufus tiene hambre."
+        },
+        {
+          "id": "rufus",
+          "pista": "📎 ¡Hazte con ese juguete!"
+        },
+        {
+          "id": "reja",
+          "pista": "📎 Una piedra nunca olvida."
+        },
+        {
+          "id": "puerta",
+          "pista": "📎 "
+        },
+        {
+          "id": "llave",
+          "pista": "📎 Debes hacer DELETE de ciertas ids."
+        }
+    ],
+    "pista-extra": [
+        {
+          "aviso": "📎 Has accedido a todas las pistas extra, si quieres una en concreto debes ir a localhost:3000/pista-extra/:algo-en-concreto"
+        },
+        {
+          "id": "reloj",
+          "pista": [
+            "📎",
+            "Hora - Binario: Piensa en una tabla de 4 bits.",
+            "Minutos - Octal: Divide entre 8 y quédate con el cociente y el resto.",
+            "AM/PM - Quizá haciendo el pino averigües algo."
+          ]
+        },
+        {
+          "id": "vecino",
+          "pista": [
+            "📎",
+            "Puedes ver pistas en: localhost:3000/pista/reloj y localhost:3000/pista/nota-mental",
+            "Mira las horas de 'no molestar' en la nota mental.",
+            "Deberás elegir al vecino que no esté durmiendo y acceder a localhost:3000/:nombre-vecino/:codigo-secreto"
+          ]
+        },
+        {
+          "id": "trepar",
+          "pista": "📎 Ese conejo se está preguntando qué haces en su casa."
+        },
+        {
+          "id": "llave",
+          "pista": "📎 Hay un número que no quieres tener en tu llave en ninguna posición."
+        }
+    ]
+}
